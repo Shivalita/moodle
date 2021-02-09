@@ -26,7 +26,7 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Bonjour le monde!';
+$string['pluginname'] = 'Bonjour le monde !';
 $string['hello'] = 'Bonjour';
 $string['whatisyourname'] = 'Quel est votre nom ?';
 $string['gotofrontpage'] = 'Aller sur la page d\'accueil du site';

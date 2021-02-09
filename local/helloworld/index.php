@@ -9,9 +9,9 @@ $PAGE->set_pagelayout('standard');
 
 $username = optional_param('username', null, PARAM_USERNAME);
 $PAGE->set_title(get_string('pluginname', 'local_helloworld'));
-$PAGE->set_heading(get_string('hello', 'local_helloworld', $username));
+$PAGE->set_heading(get_string('pluginname', 'local_helloworld'));
 
-// var_dump($PAGE->url);
+echo $OUTPUT->header();
 
 
 // if($username == null || !is_string($username)) {
@@ -32,12 +32,14 @@ $PAGE->set_heading(get_string('hello', 'local_helloworld', $username));
         echo "<h1>".get_string('hello', 'local_helloworld')." ".$username."!</h1>";
         
         $siteFrontPage = new moodle_url('/');
-        $helloMainPage = new moodle_url('/local/helloworld/');
+        $helloMainPage = new moodle_url('/local/helloworld');
         echo '<a href="' . $siteFrontPage . '">'.get_string('gotofrontpage', 'local_helloworld').'</a><br />';
         echo '<a href="' . $helloMainPage . '">'.get_string('gotomainhello', 'local_helloworld').'</a><br />';
 
         $PAGE->set_url(new moodle_url($PAGE->url, ['username' => $username]));
+        $PAGE->set_heading(get_string('hello', 'local_helloworld', $username));
 
+        
 
         // $nexturl = new moodle_url($PAGE->url, ['username' => $username]);
         // redirect($nexturl);
@@ -49,10 +51,12 @@ $PAGE->set_heading(get_string('hello', 'local_helloworld', $username));
     //   $mform->set_data($toform);
       //displays the form
 
-      echo "<h1>Hello world!</h1>";
+      // echo "<h1>Hello world!</h1>";
 
       $mform->display();
     }
+
+    // echo '</form>';
 // } else {
 
     // echo "<h1>".get_string('hello', 'local_helloworld')." ".$username."!</h1>";
@@ -64,3 +68,4 @@ $PAGE->set_heading(get_string('hello', 'local_helloworld', $username));
     // echo '<a href="' . $helloMainPage . '">'.get_string('gotomainhello', 'local_helloworld').'</a><br />';
 
 // }
+echo $OUTPUT->footer();
