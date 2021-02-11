@@ -47,7 +47,35 @@ if ($mform->is_cancelled()) {
     $mform->display();
   }
   
-echo ('COUCOU');
-$DB->get_records('local_helloworld_messages', $sort='', $fields='*', $limitfrom=0, $limitnum=0);
+// $DB->get_records('local_helloworld_messages', $sort='', $fields='*', $limitfrom=0, $limitnum=0, $strictness=IGNORE_MISSING);
+$messages = $DB->get_records('local_helloworld_messages', NULL, $sort='timecreated', $fields='*', $limitfrom=0, $limitnum=0, $strictness=IGNORE_MISSING);
+
+// echo html_writer::start_div($class = 'card-columns');
+echo '<div class="card-columns">';
+
+foreach ($messages as $message) {
+  $currentDatetime = new DateTime();
+  $currentTimestamp = $currentDatetime->getTimestamp();
+  $dateDiff = $currentTimestamp - $message->timecreated;
+  $formattedDateDiff = format_time($dateDiff);
+
+  // echo html_writer::start_div($class = 'card');
+  echo '<div class="card">';
+    // echo html_writer::start_div($class = 'card-body');
+    echo '<div class="card-body">';
+      // echo html_writer::start_span($message->message, $class = ['card-text']);
+      echo '<p class="card-text">'.$message->message.'</p>';
+      // echo html_writer::end_span();
+      // echo html_writer::start_span($message->timecreated, $class = ['card-text, text-muted, small']);
+      echo '<p class="card-text"><small class="text-muted">'.$formattedDateDiff.' ago</small></p>';
+      // echo html_writer::end_span();
+    // echo html_writer::end_div();
+    echo '</div>';
+  // echo html_writer::end_div();
+  echo '</div>';
+}
+
+// echo html_writer::end_div();
+echo '</div>';
 
 echo $OUTPUT->footer();
