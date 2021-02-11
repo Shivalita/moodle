@@ -22,7 +22,7 @@ class simplehtml_form extends moodleform {
         
         // html_writer::div(content, class="d-inline p-2 bg-primary text-white", attributes="");
 
-        $mform->addElement('text', 'username', get_string('whatisyourname', 'local_helloworld')); // Add elements to your form
+        $mform->addElement('textarea', 'username', get_string('whatisyourname', 'local_helloworld')); // Add elements to your form
         $mform->setType('username', PARAM_USERNAME);                   //Set type of element
         // $mform->setDefault('username', get_string('enterusername'));        //Default value
         $this->add_action_buttons($cancel = false, $submitlabel=get_string('submit'));

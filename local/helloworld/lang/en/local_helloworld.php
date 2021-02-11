@@ -31,3 +31,6 @@ $string['hello'] = 'Hello';
 $string['whatisyourname'] = 'What is your name?';
 $string['gotofrontpage'] = 'Go to the site front page';
 $string['gotomainhello'] = 'Back to the Hello World main page';
+$string['manage'] = 'Manage Hello World';
+$string['showinnavigation'] = 'Show in navigation';
+$string['showinnavigation_desc'] = 'When enabled, the site navigation will display a link to the Hello World plugin main page';

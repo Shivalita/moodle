@@ -31,3 +31,6 @@ $string['hello'] = 'Bonjour';
 $string['whatisyourname'] = 'Quel est votre nom ?';
 $string['gotofrontpage'] = 'Aller sur la page d\'accueil du site';
 $string['gotomainhello'] = 'Retour sur la page Bonjour le monde';
+$string['manage'] = 'Gérer Bonjour le monde';
+$string['showinnavigation'] = 'Montrer dans la navigation';
+$string['showinnavigation_desc'] = 'Quand activé, la navigation du site affichera un lien vers la page d\'accueil du plugin Bonjour le monde';
