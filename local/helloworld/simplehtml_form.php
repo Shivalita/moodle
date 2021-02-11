@@ -10,7 +10,7 @@ class simplehtml_form extends moodleform {
  
         $mform = $this->_form; // Don't forget the underscore! 
 
-        // echo get_string('whatisyourname', 'local_helloworld')."</br>";
+        // echo get_string('typeyourmessage', 'local_helloworld')."</br>";
 
         // echo '<form method="get" action="/local/helloworld/', ['username' => $username].'">';
 
@@ -22,8 +22,16 @@ class simplehtml_form extends moodleform {
         
         // html_writer::div(content, class="d-inline p-2 bg-primary text-white", attributes="");
 
-        $mform->addElement('textarea', 'username', get_string('whatisyourname', 'local_helloworld')); // Add elements to your form
-        $mform->setType('username', PARAM_USERNAME);                   //Set type of element
+        $mform->addElement('textarea', 'message', get_string('typeyourmessage', 'local_helloworld')); // Add elements to your form
+        $mform->setType('message', PARAM_TEXT);     
+
+        // $currentDatetime = userdate(time());
+
+        // $mform->addElement('hidden', 'timecreated', $currentDatetime);
+        // $mform->setType('timecreated', PARAM_RAW);     
+
+        
+        //Set type of element
         // $mform->setDefault('username', get_string('enterusername'));        //Default value
         $this->add_action_buttons($cancel = false, $submitlabel=get_string('submit'));
     }

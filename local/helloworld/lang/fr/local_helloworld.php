@@ -27,8 +27,8 @@
  */
 
 $string['pluginname'] = 'Bonjour le monde !';
-$string['hello'] = 'Bonjour';
-$string['whatisyourname'] = 'Quel est votre nom ?';
+$string['hello'] = 'Dites bonjour !';
+$string['typeyourmessage'] = 'Entrez votre message';
 $string['gotofrontpage'] = 'Aller sur la page d\'accueil du site';
 $string['gotomainhello'] = 'Retour sur la page Bonjour le monde';
 $string['manage'] = 'Gérer Bonjour le monde';

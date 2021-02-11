@@ -27,8 +27,8 @@
  */
 
 $string['pluginname'] = 'Hello World!';
-$string['hello'] = 'Hello';
-$string['whatisyourname'] = 'What is your name?';
+$string['hello'] = 'Say hello to us!';
+$string['typeyourmessage'] = 'Type your message';
 $string['gotofrontpage'] = 'Go to the site front page';
 $string['gotomainhello'] = 'Back to the Hello World main page';
 $string['manage'] = 'Manage Hello World';
