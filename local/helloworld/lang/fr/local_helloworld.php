@@ -34,3 +34,6 @@ $string['gotomainhello'] = 'Retour sur la page Bonjour le monde';
 $string['manage'] = 'Gérer Bonjour le monde';
 $string['showinnavigation'] = 'Montrer dans la navigation';
 $string['showinnavigation_desc'] = 'Quand activé, la navigation du site affichera un lien vers la page d\'accueil du plugin Bonjour le monde';
+$string['helloworld:readmessages'] = 'Lire les messages de Bonjour le monde';
+$string['helloworld:writemessages'] = 'Ecrire des messages dans Bonjour le monde';
+$string['helloworld:managemessages'] = 'Gérer les messages de Bonjour le monde';

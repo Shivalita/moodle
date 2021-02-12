@@ -32,11 +32,24 @@ defined('MOODLE_INTERNAL') || die();
  */
 function xmldb_local_helloworld_upgrade($oldversion) {
 
-    if ($oldversion < 2020092800) {
-        // Here goes the code that needs to be executed.
-        set_config('foo', 'bar', 'local_helloworld');
+    global $DB;
+ 
+    $dbman = $DB->get_manager();
 
-        upgrade_plugin_savepoint(true, 2020092800, 'local', 'helloworld');
+    if ($oldversion < 2020081801) {
+        // Define field userid to be added to local_helloworld.
+        $table = new xmldb_table('local_helloworld_messages');
+        $field = new xmldb_field('userid', XMLDB_TYPE_INTEGER, '10', null, null, null, null, 'timecreated');
+        $key = new xmldb_key('userid', XMLDB_KEY_FOREIGN, ['userid'], 'user', ['id']);
+
+        // Conditionally launch add field userid.
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+            $dbman->add_key($table, $key);
+        }
+
+        // Helloworld savepoint reached.
+        upgrade_plugin_savepoint(true, 2020081801, 'local', 'helloworld');
     }
 
     return true;

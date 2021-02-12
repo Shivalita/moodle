@@ -34,3 +34,6 @@ $string['gotomainhello'] = 'Back to the Hello World main page';
 $string['manage'] = 'Manage Hello World';
 $string['showinnavigation'] = 'Show in navigation';
 $string['showinnavigation_desc'] = 'When enabled, the site navigation will display a link to the Hello World plugin main page';
+$string['helloworld:readmessages'] = 'Read Hello World messages';
+$string['helloworld:writemessages'] = 'Write Hello World messages';
+$string['helloworld:managemessages'] = 'Manage Hello World messages';
